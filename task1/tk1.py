@@ -65,12 +65,12 @@ if __name__ == '__main__':
     frame = ttk.Frame(root, padding=10)
     frame.grid()
 
-    flag0 = True
+    flag0 = False
     text0 = '処理する動画ファイル'
     num0 = 0
     file0 = create(frame, text0, num0, flag0)
 
-    flag1 = False
+    flag1 = True
     text1 = 'RGBカラー画像の出力先フォルダ'
     num1 = 1
     file1 = create(frame, text1, num1, flag1)
