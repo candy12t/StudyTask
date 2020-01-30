@@ -3,6 +3,6 @@ __pycache__/
 .vscode/
 
 video/
-sound/
+audio/
 
 .DS_Store
