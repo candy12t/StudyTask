@@ -94,13 +94,13 @@ if __name__ == '__main__':
     file5 = app5.file
 
 
-    frame2 = ttk.Frame(root, padding=10)
-    frame2.grid()
+    subFrame = ttk.Frame(frame, padding=10)
+    subFrame.grid(row=5, column=1)
 
-    start_button = ttk.Button(frame2, text='Run', command=run)
+    start_button = ttk.Button(subFrame, text='Run', command=run)
     start_button.pack(side=LEFT)
 
-    exit_button = ttk.Button(frame2, text='Cancel', command=quit)
+    exit_button = ttk.Button(subFrame, text='Cancel', command=quit)
     exit_button.pack(side=LEFT)
 
     root.mainloop()
