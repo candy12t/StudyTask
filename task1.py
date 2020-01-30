@@ -12,48 +12,35 @@ class Video:
         self.r = r
         self.g = g
         self.b = b
+        self.n = 0
 
     def read_video(self):
         self.video = cv2.VideoCapture(self.mp4)
         if not self.video.isOpened():
             return
 
-    # def save_img(self, img, dirc):
-    #     img = Image.fromarray(img)
-    #     img.save('{}/{}.{}'.format(dirc, n, 'png'))
+    def save_img(self, dirc, x, y):
+        img = self.rgb_img.copy()
+        img[:, :, (x, y)] = 0
+        img = Image.fromarray(img)
+        img.save('{}/{}.{}'.format(dirc, self.n, 'png'))
 
     def write(self):
-        n = 0
-        for i in range(1):
+        # while True:
+        for i in range(2):
             ret, frame = self.video.read()
             if ret:
                 self.rgb_img = np.array(frame)
-                r_img = self.rgb_img.copy()
-                r_img[:, :, (1, 2)] = 0
-                r_img = Image.fromarray(r_img)
-                r_img.save('{}/{}.{}'.format(self.r, n, 'png'))
 
-                g_img = self.rgb_img.copy()
-                g_img[:, :, (0, 2)] = 0
-                g_img = Image.fromarray(g_img)
-                g_img.save('{}/{}.{}'.format(self.g, n, 'png'))
+                self.save_img(self.r, 1, 2)
+                self.save_img(self.b, 0, 2)
+                self.save_img(self.g, 0, 1)
 
-                b_img = self.rgb_img.copy()
-                b_img[:, :, (0, 1)] = 0
-                b_img = Image.fromarray(b_img)
-                b_img.save('{}/{}.{}'.format(self.b, n, 'png'))
-
-
-                # save_img(r_img, self.r)
-                # save_img(g_img, self.g)
-                # save_img(b_img, self.b)
                 self.rgb_img = cv2.cvtColor(self.rgb_img, cv2.COLOR_BGR2RGB)
                 self.rgb_img = Image.fromarray(self.rgb_img)
-                self.rgb_img.save('{}/{}.{}'.format(self.rgb, n, 'png'))
+                self.rgb_img.save('{}/{}.{}'.format(self.rgb, self.n, 'png'))
 
-                # save_img(self.rgb_img, self.rgb)
-
-                n += 1
+                self.n += 1
             else:
                 return
 
