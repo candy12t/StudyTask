@@ -15,7 +15,6 @@ def process(video_path, rgb_img_path, r_img_path, g_img_path, b_img_path):
     if not video.isOpened():
         return
 
-    count = video.get(cv2.CAP_PROP_FRAME_COUNT)
 
     n = 0
     # while True:
