@@ -33,8 +33,8 @@ class Video:
                 self.rgb_img = np.array(frame)
 
                 self.save_img(self.r, 1, 2)
-                self.save_img(self.b, 0, 2)
                 self.save_img(self.g, 0, 1)
+                self.save_img(self.b, 0, 2)
 
                 self.rgb_img = cv2.cvtColor(self.rgb_img, cv2.COLOR_BGR2RGB)
                 self.rgb_img = Image.fromarray(self.rgb_img)
