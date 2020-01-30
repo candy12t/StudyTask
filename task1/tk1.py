@@ -41,7 +41,7 @@ class Application:
 
 
 def run():
-    process(app1.file.get(), app2.file.get(), app3.file.get(), app4.file.get(), app5.file.get())
+    process(file1.get(), file2.get(), file3.get(), file4.get(), file5.get())
     exit()
 
 
@@ -63,30 +63,35 @@ if __name__ == '__main__':
     app1 = Application(frame, text1, num1)
     cmd1 = app1.load_video
     create(app1, cmd1)
+    file1 = app1.file
 
     text2 = 'RGBカラー画像の出力先フォルダ'
     num2 = 1
     app2 = Application(frame, text2, num2)
     cmd2 = app2.load_folder
     create(app2, cmd2)
+    file2 = app2.file
 
     text3 = 'R成分画像の出力先フォルダ'
     num3 = 2
     app3 = Application(frame, text3, num3)
     cmd3 = app3.load_folder
     create(app3, cmd3)
+    file3 = app3.file
 
     text4 = 'G成分画像の出力先フォルダ'
     num4 = 3
     app4 = Application(frame, text4, num4)
     cmd4 = app4.load_folder
     create(app4, cmd4)
+    file4 = app4.file
 
     text5 = 'B成分画像の出力先フォルダ'
     num5 = 4
     app5 = Application(frame, text5, num5)
     cmd5 = app5.load_folder
     create(app5, cmd5)
+    file5 = app5.file
 
 
     frame2 = ttk.Frame(root, padding=10)
