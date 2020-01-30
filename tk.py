@@ -30,12 +30,12 @@ class Application:
 
     def load_video(self):
         fTyp = [('', '*.mp4')]
-        iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        iDir = os.path.abspath(os.path.dirname(__file__))
         filepath = filedialog.askopenfilename(filetypes = fTyp, initialdir = iDir)
         self.file.set(filepath)
 
     def load_folder(self):
-        iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        iDir = os.path.abspath(os.path.dirname(__file__))
         dirc = filedialog.askdirectory(initialdir = iDir)
         self.file.set(dirc)
 
