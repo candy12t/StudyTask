@@ -47,6 +47,23 @@ class Application:
         self.file.set(dirc)
 
 
+class Subframe:
+    def __init__(self, frame):
+        self.frame = frame
+
+    def create_subfame(self):
+        self.subFrame = ttk.Frame(self.frame, padding=10)
+        self.subFrame.grid(row=5, column=1)
+
+    def create_start_button(self, run_cmd):
+        start_button = ttk.Button(self.subFrame, text='Run', command=run_cmd)
+        start_button.pack(side=LEFT)
+
+    def create_exit_button(self):
+        exit_button = ttk.Button(self.subFrame, text='Cancel', command=quit)
+        exit_button.pack(side=LEFT)
+
+
 def run_video():
     video = Video(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
     video.read_video()
@@ -133,13 +150,11 @@ if __name__ == '__main__':
     # file4 = create(frame, text4, num4, flag1)
 
 
-    subFrame = ttk.Frame(frame, padding=10)
-    subFrame.grid(row=5, column=1)
+    run_cmd = run_audio
+    sub_frame = Subframe(frame)
+    sub_frame.create_subfame()
+    sub_frame.create_start_button(run_cmd)
+    sub_frame.create_exit_button()
 
-    start_button = ttk.Button(subFrame, text='Run', command=run1)
-    start_button.pack(side=LEFT)
-
-    exit_button = ttk.Button(subFrame, text='Cancel', command=quit)
-    exit_button.pack(side=LEFT)
 
     root.mainloop()
