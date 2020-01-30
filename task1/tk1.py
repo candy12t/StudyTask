@@ -41,16 +41,16 @@ class Application:
 
 
 def run():
-    process(file1.get(), file2.get(), file3.get(), file4.get(), file5.get())
+    process(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
     exit()
 
 
 def create(frame, text, num, flag):
     app = Application(frame, text, num)
     if flag:
-        cmd = app.load_video
-    else:
         cmd = app.load_folder
+    else:
+        cmd = app.load_video
     app.label()
     app.textbox()
     app.btn(cmd)
@@ -65,27 +65,27 @@ if __name__ == '__main__':
     frame = ttk.Frame(root, padding=10)
     frame.grid()
 
-    flag1 = True
-    text1 = '処理する動画ファイル'
-    num1 = 0
+    flag0 = True
+    text0 = '処理する動画ファイル'
+    num0 = 0
+    file0 = create(frame, text0, num0, flag0)
+
+    flag1 = False
+    text1 = 'RGBカラー画像の出力先フォルダ'
+    num1 = 1
     file1 = create(frame, text1, num1, flag1)
 
-    flag2 = False
-    text2 = 'RGBカラー画像の出力先フォルダ'
-    num2 = 1
-    file2 = create(frame, text2, num2, flag2)
+    text2 = 'R成分画像の出力先フォルダ'
+    num2 = 2
+    file2 = create(frame, text2, num2, flag1)
 
-    text3 = 'R成分画像の出力先フォルダ'
-    num3 = 2
-    file3 = create(frame, text3, num3, flag2)
+    text3 = 'G成分画像の出力先フォルダ'
+    num3 = 3
+    file3 = create(frame, text3, num3, flag1)
 
-    text4 = 'G成分画像の出力先フォルダ'
-    num4 = 3
-    file4 = create(frame, text4, num4, flag2)
-
-    text5 = 'B成分画像の出力先フォルダ'
-    num5 = 4
-    file5 = create(frame, text5, num5, flag2)
+    text4 = 'B成分画像の出力先フォルダ'
+    num4 = 4
+    file4 = create(frame, text4, num4, flag1)
 
 
     subFrame = ttk.Frame(frame, padding=10)
