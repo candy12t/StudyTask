@@ -12,33 +12,32 @@ class Application:
         self.frame = frame
         self.text = text
         self.num = num
+        self.file = StringVar()
 
     def label(self):
         self.string = StringVar()
         self.string.set(self.text)
-        self.label = ttk.Label(self.frame, textvariable=self.string)
-        self.label.grid(row=self.num, column=0)
+        label = ttk.Label(self.frame, textvariable=self.string)
+        label.grid(row=self.num, column=0)
 
     def textbox(self):
-        self.file = StringVar()
-        self.textbox = ttk.Entry(self.frame, textvariable=self.file, width=50)
-        self.textbox.grid(row=self.num, column=1)
+        textbox = ttk.Entry(self.frame, textvariable=self.file, width=50)
+        textbox.grid(row=self.num, column=1)
 
     def btn(self, cmd):
-        self.cmd = cmd
-        self.button = ttk.Button(self.frame, text='参照', command=self.cmd)
-        self.button.grid(row=self.num, column=2)
+        button = ttk.Button(self.frame, text='参照', command=cmd)
+        button.grid(row=self.num, column=2)
 
     def load_video(self):
-        self.fTyp = [('', '*.mp4')]
-        self.iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-        self.filepath = filedialog.askopenfilename(filetypes = self.fTyp, initialdir = self.iDir)
-        self.file.set(self.filepath)
+        fTyp = [('', '*.mp4')]
+        iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        filepath = filedialog.askopenfilename(filetypes = fTyp, initialdir = iDir)
+        self.file.set(filepath)
 
     def load_folder(self):
-        self.iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-        self.dirc = filedialog.askdirectory(initialdir = self.iDir)
-        self.file.set(self.dirc)
+        iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        dirc = filedialog.askdirectory(initialdir = iDir)
+        self.file.set(dirc)
 
 
 def run():
