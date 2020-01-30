@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
 from tkinter import messagebox
-from task1 import process
+from task1 import Video
 
 
 class Application:
@@ -41,7 +41,10 @@ class Application:
 
 
 def run():
-    process(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
+    video = Video(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
+    video.read_video()
+    video.write()
+    video.open_dir()
     exit()
 
 
