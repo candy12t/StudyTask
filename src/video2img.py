@@ -50,14 +50,14 @@ class Video:
         subprocess.call(cmd.split())
 
 
-if __name__ == '__main__':
-    mp4 = input()
-    rgb = input()
-    r = input()
-    g = input()
-    b = input()
+# if __name__ == '__main__':
+#     mp4 = input()
+#     rgb = input()
+#     r = input()
+#     g = input()
+#     b = input()
 
-    video = Video(mp4, rgb, r, g, b)
-    video.read_video()
-    video.write()
-    video.open_dir()
+#     video = Video(mp4, rgb, r, g, b)
+#     video.read_video()
+#     video.write()
+#     video.open_dir()
