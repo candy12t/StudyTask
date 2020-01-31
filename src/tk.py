@@ -80,18 +80,19 @@ def run_audio():
     exit()
 
 
-def create(frame, text, num, flag):
+def create_gui(frame, text, num, load):
     app = Application(frame, text, num)
-    if flag:
+    if load == 'f':
         cmd = app.load_folder
-    else:
+    elif load == 'v':
         cmd = app.load_video
+    elif load == 'a':
+        cmd = app.load_wave
     app.label()
     app.textbox()
     app.btn(cmd)
     file = app.file
     return file
-
 
 if __name__ == '__main__':
     root = Tk()
