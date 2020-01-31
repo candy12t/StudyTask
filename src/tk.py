@@ -3,8 +3,8 @@ import sys
 from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
-from video2img import Video
-from audio import Audio
+# from video2img import Video
+# from audio import Audio
 
 
 class Application:
@@ -63,20 +63,20 @@ class Subframe:
         exit_button.pack(side=LEFT)
 
 
-def run_video():
-    video = Video(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
-    video.read_video()
-    video.write()
-    video.open_dir()
-    exit()
+# def run_video():
+#     video = Video(file0.get(), file1.get(), file2.get(), file3.get(), file4.get())
+#     video.read_video()
+#     video.write()
+#     video.open_dir()
+#     exit()
 
 
-def run_audio():
-    audio = Audio(file0.get(), file2.get())
-    audio.read()
-    audio.write(int(file1.get()))
-    audio.open_dir()
-    exit()
+# def run_audio():
+#     audio = Audio(file0.get(), file2.get())
+#     audio.read()
+#     audio.write(int(file1.get()))
+#     audio.open_dir()
+#     exit()
 
 
 def create_gui(frame, text, num, load):
