@@ -26,8 +26,7 @@ class Video:
         img.save('{}/{}.{}'.format(dirc, self.n, 'png'))
 
     def write(self):
-        # while True:
-        for i in range(2):
+        while True:
             ret, frame = self.video.read()
             if ret:
                 self.rgb_img = np.array(frame)
@@ -48,16 +47,3 @@ class Video:
         input_dir = os.path.dirname(os.path.abspath(self.mp4))
         cmd = 'open {} {} {} {} {}'.format(input_dir, self.rgb, self.r, self.g, self.b)
         subprocess.call(cmd.split())
-
-
-# if __name__ == '__main__':
-#     mp4 = input()
-#     rgb = input()
-#     r = input()
-#     g = input()
-#     b = input()
-
-#     video = Video(mp4, rgb, r, g, b)
-#     video.read_video()
-#     video.write()
-#     video.open_dir()

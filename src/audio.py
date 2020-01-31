@@ -53,14 +53,3 @@ class Audio:
         input_dir = os.path.dirname(os.path.abspath(self.wavfile))
         cmd = 'open {} {}'.format(input_dir, self.output_dir)
         subprocess.call(cmd.split())
-
-
-# if __name__ == '__main__':
-#     wavfile = './sound/input/A_a.wav' # input()
-#     output_dir = './sound/output' # input()
-#     frame_count = 2765 # int(input()) 2765 → 5分割
-
-#     audio = Audio(wavfile, output_dir)
-#     audio.read()
-#     audio.write(frame_count)
-#     audio.open_dir()
