@@ -3,7 +3,6 @@ import sys
 from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
-from tkinter import messagebox
 from video2img import Video
 from audio import Audio
 
