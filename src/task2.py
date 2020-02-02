@@ -4,9 +4,9 @@ from audio import Audio
 
 
 def run_audio():
-    audio = Audio(file0.get(), file2.get())
+    audio = Audio(files[0].get(), files[2].get())
     audio.read()
-    audio.write(int(file1.get()))
+    audio.write(int(files[1].get()))
     audio.open_dir()
     exit()
 
@@ -17,22 +17,17 @@ root.title('課題2')
 frame = ttk.Frame(root, padding=10)
 frame.grid()
 
-load_a = 'a'
-text0 = '処理する音声ファイル'
-num0 = 0
-file0 = create_gui(frame, text0, num0, load_a)
-
-text1 = '切り出すフレーム数'
-num1 = 1
-app1 = Application(frame, text1, num1)
-app1.label()
-app1.textbox()
-file1 = app1.file
-
-load_f = 'f'
-text2 = '出力先フォルダ'
-num2 = 2
-file2 = create_gui(frame, text2, num2, load_f)
+texts = ['処理する音声ファイル', '切り出すフレーム数', '出力先フォルダ']
+files = []
+for i in range(len(texts)):
+    if i == 0:
+        load = 'a'
+    elif i == 2:
+        load = 'f'
+    else:
+        load = None
+    file = create_gui(frame, texts[i], i, load)
+    files.append(file)
 
 run_cmd = run_audio
 sub_frame = Subframe(frame)

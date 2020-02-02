@@ -10,9 +10,7 @@ class Application:
         self.file = StringVar()
 
     def label(self):
-        self.string = StringVar()
-        self.string.set(self.text)
-        label = ttk.Label(self.frame, textvariable=self.string)
+        label = ttk.Label(self.frame, text=self.text)
         label.grid(row=self.num, column=0)
 
     def textbox(self):
@@ -20,8 +18,9 @@ class Application:
         textbox.grid(row=self.num, column=1)
 
     def btn(self, cmd):
-        button = ttk.Button(self.frame, text='参照', command=cmd)
-        button.grid(row=self.num, column=2)
+        if cmd is not None:
+            button = ttk.Button(self.frame, text='参照', command=cmd)
+            button.grid(row=self.num, column=2)
 
     def load_video(self):
         fTyp = [('', '*.mp4')]
@@ -58,7 +57,7 @@ class Subframe:
         exit_button.pack(side=LEFT)
 
 
-def create_gui(frame, text, num, load):
+def create_gui(frame, text, num, load=None):
     app = Application(frame, text, num)
     if load == 'f':
         cmd = app.load_folder
@@ -66,6 +65,8 @@ def create_gui(frame, text, num, load):
         cmd = app.load_video
     elif load == 'a':
         cmd = app.load_wave
+    else:
+        cmd = None
     app.label()
     app.textbox()
     app.btn(cmd)
