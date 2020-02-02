@@ -28,10 +28,10 @@ texts = [
 files = []
 for i in range(len(texts)):
     if i == 0:
-        load = 'v'
+        cmd = 'v'
     else:
-        load = 'f'
-    file = create_gui(frame, texts[i], i, load)
+        cmd = 'f'
+    file = create_gui(frame, texts[i], i, cmd)
     files.append(file)
 
 run_cmd = run_video

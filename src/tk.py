@@ -57,14 +57,14 @@ class Subframe:
         exit_button.pack(side=LEFT)
 
 
-def create_gui(frame, text, num, load=None):
+def create_gui(frame, text, num, cmd=None):
     app = Application(frame, text, num)
-    if load == 'f':
-        cmd = app.load_folder
-    elif load == 'v':
-        cmd = app.load_video
-    elif load == 'a':
-        cmd = app.load_wave
+    if cmd == 'f':
+        cmd = app.cmd_folder
+    elif cmd == 'v':
+        cmd = app.cmd_video
+    elif cmd == 'a':
+        cmd = app.cmd_wave
     else:
         cmd = None
     app.label()

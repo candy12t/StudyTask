@@ -21,12 +21,12 @@ texts = ['処理する音声ファイル', '切り出すフレーム数', '出�
 files = []
 for i in range(len(texts)):
     if i == 0:
-        load = 'a'
+        cmd = 'a'
     elif i == 2:
-        load = 'f'
+        cmd = 'f'
     else:
-        load = None
-    file = create_gui(frame, texts[i], i, load)
+        cmd = None
+    file = create_gui(frame, texts[i], i, cmd)
     files.append(file)
 
 run_cmd = run_audio
