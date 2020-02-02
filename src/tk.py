@@ -60,11 +60,11 @@ class Subframe:
 def create_gui(frame, text, num, cmd=None):
     app = Application(frame, text, num)
     if cmd == 'f':
-        cmd = app.cmd_folder
+        cmd = app.load_folder
     elif cmd == 'v':
-        cmd = app.cmd_video
+        cmd = app.load_video
     elif cmd == 'a':
-        cmd = app.cmd_wave
+        cmd = app.load_wave
     else:
         cmd = None
     app.label()
