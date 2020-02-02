@@ -19,9 +19,12 @@ class Video:
         if not self.video.isOpened():
             return
 
-    def save_img(self, dirc, x, y):
-        img = self.rgb_img.copy()
-        img[:, :, (x, y)] = 0
+    def save_img(self, dirc, x=None, y=None):
+        img = self.img.copy()
+        if x is None and y is None:
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        else:
+            img[:, :, (x, y)] = 0
         img = Image.fromarray(img)
         img.save('{}/{}.{}'.format(dirc, self.n, 'png'))
 
@@ -29,15 +32,12 @@ class Video:
         while True:
             ret, frame = self.video.read()
             if ret:
-                self.rgb_img = np.array(frame)
+                self.img = np.array(frame)
 
+                self.save_img(self.rgb)
                 self.save_img(self.r, 1, 2)
                 self.save_img(self.g, 0, 2)
                 self.save_img(self.b, 0, 1)
-
-                self.rgb_img = cv2.cvtColor(self.rgb_img, cv2.COLOR_BGR2RGB)
-                self.rgb_img = Image.fromarray(self.rgb_img)
-                self.rgb_img.save('{}/{}.{}'.format(self.rgb, self.n, 'png'))
 
                 self.n += 1
             else:
