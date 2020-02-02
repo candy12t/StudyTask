@@ -1,5 +1,5 @@
 from tk import Application, Subframe, create_gui
-from tkinter import *
+from tkinter import Tk, ttk
 from audio import Audio
 
 

@@ -1,8 +1,5 @@
 import os
-import sys
-from tkinter import *
-from tkinter import filedialog
-from tkinter import ttk
+from tkinter import StringVar, LEFT, filedialog, ttk
 
 
 class Application:
@@ -29,18 +26,18 @@ class Application:
     def load_video(self):
         fTyp = [('', '*.mp4')]
         iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-        filepath = filedialog.askopenfilename(filetypes = fTyp, initialdir = iDir)
+        filepath = filedialog.askopenfilename(filetypes=fTyp, initialdir=iDir)
         self.file.set(filepath)
 
     def load_wave(self):
         fTyp = [('', '*.wav')]
         iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-        filepath = filedialog.askopenfilename(filetypes = fTyp, initialdir = iDir)
+        filepath = filedialog.askopenfilename(filetypes=fTyp, initialdir=iDir)
         self.file.set(filepath)
 
     def load_folder(self):
         iDir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-        dirc = filedialog.askdirectory(initialdir = iDir)
+        dirc = filedialog.askdirectory(initialdir=iDir)
         self.file.set(dirc)
 
 

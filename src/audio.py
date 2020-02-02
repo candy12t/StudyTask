@@ -20,11 +20,10 @@ class Audio:
         wavRead = wave.open(self.wavfile, 'rb')
         wavRead.rewind()
 
-        self.nchannels = wavRead.getnchannels() # 1
-        self.sampwidth = wavRead.getsampwidth() # 2
-        self.framerate = wavRead.getframerate() # 20000
-        self.nframes = wavRead.getnframes() # 13824
-        # print('nchannels:{}, sampwidth:{}, framerate:{}, nframes:{}'.format(self.nchannels, self.sampwidth, self.framerate, self.nframes))
+        self.nchannels = wavRead.getnchannels()
+        self.sampwidth = wavRead.getsampwidth()
+        self.framerate = wavRead.getframerate()
+        self.nframes = wavRead.getnframes()
 
         data = wavRead.readframes(self.nframes)
         wavRead.close()

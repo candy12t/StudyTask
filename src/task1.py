@@ -1,5 +1,5 @@
-from tk import Application, Subframe, create_gui
-from tkinter import *
+from tk import Subframe, create_gui
+from tkinter import Tk, ttk
 from video2img import Video
 
 
