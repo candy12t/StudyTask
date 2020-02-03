@@ -32,7 +32,7 @@ class Video:
         img.save('{}/{}.{}'.format(dirc, self.n, 'png')) #  指定したディレクトリに保存
 
     # 動画をフレームごとに切り出して処理
-    def write(self):
+    def process(self):
         while True:
             ret, frame = self.video.read() # (ret, frame) = (boolean型、ndarray型)
             if ret:

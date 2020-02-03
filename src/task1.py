@@ -6,7 +6,7 @@ from video2img import Video
 def run_video():
     video = Video(files[0].get(), files[1].get(), files[2].get(), files[3].get(), files[4].get())
     video.read_video()
-    video.write()
+    video.process()
     video.open_dir()
     exit()
 
