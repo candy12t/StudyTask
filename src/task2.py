@@ -1,6 +1,10 @@
-from tk import Application, Subframe, create_gui
+# 課題2実行
+
 from tkinter import Tk, ttk
+
 from audio import Audio
+from tk import Application, Subframe, create_gui
+
 
 # 音声処理
 def run_audio():

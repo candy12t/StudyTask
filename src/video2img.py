@@ -1,8 +1,11 @@
-import numpy as np
-from PIL import Image
-import subprocess
-import cv2
+# 動画処理
+
 import os
+import subprocess
+
+import numpy as np
+import cv2
+from PIL import Image
 
 
 class Video:

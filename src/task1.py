@@ -1,5 +1,8 @@
-from tk import Subframe, create_gui
+# 課題1実行
+
 from tkinter import Tk, ttk
+
+from tk import Subframe, create_gui
 from video2img import Video
 
 

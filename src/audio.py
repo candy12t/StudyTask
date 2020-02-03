@@ -1,9 +1,12 @@
-from scipy import int16, int32
-import wave
+# 音声処理
+
 import math
-import numpy as np
-import subprocess
 import os
+import subprocess
+import wave
+
+import numpy as np
+from scipy import int16, int32
 
 
 class Audio:
