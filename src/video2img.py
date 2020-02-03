@@ -49,7 +49,7 @@ class Video:
 
     # 指定したディレクトリを開く
     def open_dir(self):
-        input_dir = os.path.dirname(os.path.abspath(self.mp4)) # 動画ファイルのカレントディレクトリの取得
+        input_dir = os.path.dirname(os.path.abspath(self.mp4)) # 入力動画ファイルのカレントディレクトリの取得
         # openコマンドの実行
         cmd = 'open {} {} {} {} {}'.format(input_dir, self.rgb, self.r, self.g, self.b)
         subprocess.call(cmd.split())
