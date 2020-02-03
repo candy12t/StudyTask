@@ -2,7 +2,7 @@ from tk import Application, Subframe, create_gui
 from tkinter import Tk, ttk
 from audio import Audio
 
-
+# 音声処理
 def run_audio():
     audio = Audio(files[0].get(), files[2].get())
     audio.read()
@@ -10,13 +10,15 @@ def run_audio():
     audio.open_dir()
     exit()
 
-
+# rootの作成
 root = Tk()
 root.title('課題2')
 
+# frameの作成
 frame = ttk.Frame(root, padding=10)
 frame.grid()
 
+# GIU表示部分の作成
 texts = ['処理する音声ファイル', '切り出すフレーム数', '出力先フォルダ']
 files = []
 for i in range(len(texts)):
@@ -29,6 +31,7 @@ for i in range(len(texts)):
     file = create_gui(frame, texts[i], i, cmd)
     files.append(file)
 
+# # 実行、キャンセルボタン部分のフレーム作成
 run_cmd = run_audio
 sub_frame = Subframe(frame)
 sub_frame.create_subfame()
